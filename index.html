@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ed's FixLab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-sky-50 via-indigo-50 to-purple-50 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <span class="font-bold text-xl text-indigo-600">Ed's FixLab</span>
+      <div class="flex gap-4 text-sm items-center">
+        <a href="#home" class="hover:text-indigo-600">Home</a>
+        <a href="#diagnose" class="hover:text-indigo-600">What's Wrong</a>
+        <a href="#simple-fixes" class="hover:text-indigo-600">Simple Fixes</a>
+        <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+        <a href="#book" class="bg-indigo-600 text-white px-3 py-1 rounded hover:bg-indigo-700">Book</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="px-6 py-20">
+    <div class="max-w-5xl mx-auto text-center space-y-6">
+      <h1 class="text-5xl font-bold tracking-tight">Your Tech Broke.<br>We've Got You.</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">Phones, laptops, tablets. Sometimes it's serious, sometimes it's silly. Either way, we explain it clearly and fix it right.</p>
+      <div class="flex justify-center gap-4">
+        <a href="#book" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700">Book a Repair</a>
+        <a href="#diagnose" class="border px-6 py-3 rounded hover:bg-gray-100">See What's Wrong</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK -->
+  <section id="book" class="px-6 py-20 bg-white">
+    <div class="max-w-3xl mx-auto space-y-6">
+      <h2 class="text-3xl font-bold">Book a Repair</h2>
+      <p class="text-gray-700">Tell us what's going on and how to reach you. We'll confirm the details and take it from there.</p>
+
+      <form action="https://formspree.io/f/mreekeyp" method="POST" class="space-y-4">
+        <input type="text" name="name" placeholder="Your name" required class="w-full border rounded-md p-3" />
+        <input type="email" name="email" placeholder="Email address" required class="w-full border rounded-md p-3" />
+        <input type="text" name="device" placeholder="Device (phone, laptop, tablet, etc.)" required class="w-full border rounded-md p-3" />
+        <textarea name="message" placeholder="What's the problem?" rows="4" required class="w-full border rounded-md p-3"></textarea>
+        <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700">Send Repair Request</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- DIAGNOSE -->
+  <section id="diagnose" class="px-6 py-20 bg-indigo-50">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <h2 class="text-3xl font-bold">Let's Figure This Out</h2>
+      <p class="text-gray-700">Is it turning on? Overheating? Acting haunted? We'll ask the right questions and narrow it down.</p>
+      <div class="flex gap-4 flex-wrap">
+        <a href="diagnose.html" class="bg-indigo-600 text-white px-6 py-3 rounded hover:bg-indigo-700">Start Diagnosis</a>
+        <a href="diagnose.html#phone" class="border px-6 py-3 rounded hover:bg-gray-100">Phone</a>
+        <a href="diagnose.html#computer" class="border px-6 py-3 rounded hover:bg-gray-100">Computer</a>
+        <a href="diagnose.html#tablet" class="border px-6 py-3 rounded hover:bg-gray-100">Tablet</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMPLE FIXES -->
+  <section id="simple-fixes" class="px-6 py-20 bg-sky-50">
+    <div class="max-w-4xl mx-auto space-y-6">
+      <h2 class="text-3xl font-bold">Simple Fixes First</h2>
+      <p class="text-gray-700">Restarting isn't a joke. Neither is cleaning a port. These fixes actually work sometimes.</p>
+      <a href="simple-fixes.html" class="border px-6 py-3 rounded hover:bg-gray-100 inline-block">View Simple Fixes</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="px-6 py-20 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Stuff People Always Ask</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li>How long will this actually take?</li>
+        <li>Can you fix this today?</li>
+        <li>Are my photos and files safe?</li>
+        <li>Do you work on my weird, old device?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-sm text-gray-500 py-10">
+    © 2026 Ed's FixLab · Honest fixes, no nonsense
+  </footer>
+
+</body>
+</html>
