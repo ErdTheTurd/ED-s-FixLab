@@ -20,7 +20,6 @@
       <button type="button" onclick="showSection('services')">Services</button>
       <button type="button" onclick="showSection('diagnose')">Diagnose</button>
       <button type="button" onclick="showSection('fixes')">Fixes</button>
-      <button type="button" onclick="showSection('testimonials')">Testimonials</button>
       <button type="button" onclick="showSection('faq')">FAQ</button>
       <button type="button" onclick="showSection('book')" class="bg-indigo-600 text-white px-4 py-2 rounded">Book</button>
     </div>
@@ -57,27 +56,6 @@
   <h2 class="text-4xl font-bold text-center">Simple Fixes</h2>
 </section>
 
-<section id="testimonials" class="section hidden">
-  <h2 class="text-4xl font-bold text-center mb-10">What People Say</h2>
-
-  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-    <div class="bg-white p-6 rounded shadow">
-      <p class="italic mb-4">“Explained everything, fixed my phone same day, and didn’t upsell me once.”</p>
-      <p class="font-bold">— Sarah M.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded shadow">
-      <p class="italic mb-4">“My laptop wouldn’t turn on. Turned out it was something simple. Honest and fast.”</p>
-      <p class="font-bold">— James R.</p>
-    </div>
-
-    <div class="bg-white p-6 rounded shadow">
-      <p class="italic mb-4">“Calm, clear, no tech jargon. Exactly what I needed.”</p>
-      <p class="font-bold">— Elena T.</p>
-    </div>
-  </div>
-</section>
-
 <section id="faq" class="section hidden">
   <h2 class="text-4xl font-bold text-center">FAQ</h2>
 </section>
@@ -91,6 +69,34 @@
     <textarea name="message" required placeholder="Describe the issue" class="w-full border p-3 rounded"></textarea>
     <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded">Request Appointment</button>
   </form>
+</section>
+
+<!-- TESTIMONIALS (always visible at bottom) -->
+<section class="max-w-6xl mx-auto mt-24">
+  <h2 class="text-3xl font-bold text-center mb-10">People Who Were Once Panicking</h2>
+
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded shadow">
+      <p class="italic mb-4">
+        “I thought my phone was completely dead. Turns out it wasn’t — and Ed fixed it fast.”
+      </p>
+      <p class="font-bold">— Alex P.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded shadow">
+      <p class="italic mb-4">
+        “No upselling, no pressure. Just calm explanations and a working laptop.”
+      </p>
+      <p class="font-bold">— Morgan L.</p>
+    </div>
+
+    <div class="bg-white p-6 rounded shadow">
+      <p class="italic mb-4">
+        “I came in stressed and left relieved. That alone is worth five stars.”
+      </p>
+      <p class="font-bold">— Jamie R.</p>
+    </div>
+  </div>
 </section>
 
 </main>
