@@ -1,152 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ed’s FixLab – Device Repair That Makes Sense</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hidden { display: none !important; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ed's FixLab</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .hidden { display: none !important; }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800">
 
-<nav class="bg-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
-        <span class="text-2xl font-bold text-indigo-600">Ed’s FixLab</span>
-        <div class="space-x-6 hidden md:block">
-            <button type="button" onclick="showSection('home')" class="hover:text-indigo-600">Home</button>
-            <button type="button" onclick="showSection('services')" class="hover:text-indigo-600">Services</button>
-            <button type="button" onclick="showSection('diagnose')" class="hover:text-indigo-600">Diagnose</button>
-            <button type="button" onclick="showSection('fixes')" class="hover:text-indigo-600">Fixes</button>
-            <button type="button" onclick="showSection('faq')" class="hover:text-indigo-600">FAQ</button>
-            <button type="button" onclick="showSection('book')" class="hover:text-indigo-600 font-bold">Book</button>
-        </div>
+<nav class="bg-white shadow sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between">
+    <div class="font-bold text-2xl text-indigo-600">Ed's FixLab</div>
+    <div class="flex gap-4">
+      <button type="button" onclick="showSection('home')">Home</button>
+      <button type="button" onclick="showSection('services')">Services</button>
+      <button type="button" onclick="showSection('diagnose')">Diagnose</button>
+      <button type="button" onclick="showSection('fixes')">Fixes</button>
+      <button type="button" onclick="showSection('faq')">FAQ</button>
+      <button type="button" onclick="showSection('book')" class="bg-indigo-600 text-white px-4 py-2 rounded">Book</button>
     </div>
+  </div>
 </nav>
 
-<main class="max-w-7xl mx-auto px-4 py-12">
+<main class="max-w-7xl mx-auto px-6 py-12 space-y-20">
 
-<!-- HOME -->
 <section id="home" class="section">
-    <h1 class="text-5xl font-bold text-center mb-6">We Fix Tech. Calmly.</h1>
-    <p class="text-xl text-center text-gray-600 mb-12">
-        Phones, computers, tablets. No nonsense. No upselling.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-8">
-        <div onclick="bookDevice('Phone')" class="cursor-pointer bg-white p-8 rounded-xl shadow hover:shadow-xl">
-            <h3 class="text-2xl font-bold mb-2">Phones</h3>
-            <p>Cracked screens, batteries, water damage.</p>
-        </div>
-        <div onclick="bookDevice('Computer')" class="cursor-pointer bg-white p-8 rounded-xl shadow hover:shadow-xl">
-            <h3 class="text-2xl font-bold mb-2">Computers</h3>
-            <p>Slow systems, viruses, hardware upgrades.</p>
-        </div>
-        <div onclick="bookDevice('Tablet')" class="cursor-pointer bg-white p-8 rounded-xl shadow hover:shadow-xl">
-            <h3 class="text-2xl font-bold mb-2">Tablets</h3>
-            <p>Touchscreens, charging issues, software.</p>
-        </div>
-    </div>
+  <h1 class="text-5xl font-bold text-center mb-6">We Fix Tech. Calmly.</h1>
+  <p class="text-xl text-center text-gray-600 mb-10">Phones, computers, tablets.</p>
 </section>
 
-<!-- SERVICES -->
 <section id="services" class="section hidden">
-    <h2 class="text-4xl font-bold text-center mb-8">What We Fix</h2>
-    <p class="text-center text-gray-600">Most repairs done same day.</p>
+  <h2 class="text-4xl font-bold text-center">Services</h2>
 </section>
 
-<!-- DIAGNOSE -->
 <section id="diagnose" class="section hidden">
-    <h2 class="text-4xl font-bold text-center mb-8">Let’s Figure This Out</h2>
-    <div class="flex justify-center gap-4">
-        <button type="button" onclick="showIssues('phone')" class="bg-white px-6 py-4 rounded shadow">Phone</button>
-        <button type="button" onclick="showIssues('computer')" class="bg-white px-6 py-4 rounded shadow">Computer</button>
-        <button type="button" onclick="showIssues('tablet')" class="bg-white px-6 py-4 rounded shadow">Tablet</button>
-    </div>
-    <div id="issues-container" class="hidden mt-8 bg-white p-6 rounded shadow">
-        <h3 id="issues-title" class="text-2xl font-bold mb-4"></h3>
-        <div id="issues-list"></div>
-    </div>
+  <h2 class="text-4xl font-bold text-center mb-6">Let's Figure This Out</h2>
+
+  <div class="flex justify-center gap-4">
+    <button type="button" onclick="showIssues('phone')" class="border px-6 py-3 rounded">Phone</button>
+    <button type="button" onclick="showIssues('computer')" class="border px-6 py-3 rounded">Computer</button>
+    <button type="button" onclick="showIssues('tablet')" class="border px-6 py-3 rounded">Tablet</button>
+  </div>
+
+  <div id="issues-container" class="hidden max-w-xl mx-auto mt-8 bg-white p-6 rounded shadow">
+    <h3 id="issues-title" class="text-2xl font-bold mb-4"></h3>
+    <ul id="issues-list" class="list-disc list-inside space-y-2"></ul>
+  </div>
 </section>
 
-<!-- FIXES -->
 <section id="fixes" class="section hidden">
-    <h2 class="text-4xl font-bold text-center mb-8">Simple Things to Try First</h2>
-    <p class="text-center text-gray-600">No shame in DIY.</p>
+  <h2 class="text-4xl font-bold text-center">Simple Fixes</h2>
 </section>
 
-<!-- FAQ -->
 <section id="faq" class="section hidden">
-    <h2 class="text-4xl font-bold text-center mb-8">FAQ</h2>
-    <p class="text-center text-gray-600">Short answers. Honest ones.</p>
+  <h2 class="text-4xl font-bold text-center">FAQ</h2>
 </section>
 
-<!-- BOOK -->
 <section id="book" class="section hidden">
-    <h2 class="text-4xl font-bold text-center mb-8">Book a Repair</h2>
+  <h2 class="text-4xl font-bold text-center mb-6">Book a Repair</h2>
 
-    <div class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow">
-        <input id="name" placeholder="Your name" class="w-full mb-4 p-3 border rounded">
-        <input id="email" placeholder="Email (or phone below)" class="w-full mb-4 p-3 border rounded">
-        <input id="phone" placeholder="Phone (or email above)" class="w-full mb-4 p-3 border rounded">
-        <input id="device" readonly class="w-full mb-4 p-3 border bg-gray-100 rounded">
-        <textarea id="issue" placeholder="What’s going on?" class="w-full mb-4 p-3 border rounded"></textarea>
-        <input id="date" type="date" class="w-full mb-4 p-3 border rounded">
-        <select id="time" class="w-full mb-6 p-3 border rounded">
-            <option value="">Select time</option>
-            <option>9am</option>
-            <option>11am</option>
-            <option>1pm</option>
-            <option>3pm</option>
-            <option>5pm</option>
-        </select>
-
-        <button type="button" onclick="submitForm()" class="w-full bg-indigo-600 text-white py-4 rounded font-bold">
-            Request Appointment
-        </button>
-    </div>
+  <form action="https://formspree.io/f/mreekeyp" method="POST" class="max-w-xl mx-auto space-y-4">
+    <input name="name" required placeholder="Your name" class="w-full border p-3 rounded">
+    <input name="email" type="email" placeholder="Email" class="w-full border p-3 rounded">
+    <textarea name="message" required placeholder="Describe the issue" class="w-full border p-3 rounded"></textarea>
+    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded">Request Appointment</button>
+  </form>
 </section>
 
 </main>
 
 <script>
 function showSection(id) {
-    document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
+  var sections = document.querySelectorAll('.section');
+  for (var i = 0; i < sections.length; i++) {
+    sections[i].classList.add('hidden');
+  }
+  document.getElementById(id).classList.remove('hidden');
 }
 
-window.onload = () => showSection('home');
+function showIssues(type) {
+  var issues = {
+    phone: ['Cracked screen', 'Battery draining fast', 'Will not charge', 'Water damage'],
+    computer: ['Running slow', 'Will not turn on', 'Virus or popups', 'Overheating'],
+    tablet: ['Touch not responding', 'Charging issues', 'App crashes', 'Screen damage']
+  };
 
-function bookDevice(device) {
-    document.getElementById('device').value = device;
-    showSection('book');
+  var title = document.getElementById('issues-title');
+  var list = document.getElementById('issues-list');
+
+  title.textContent = type.charAt(0).toUpperCase() + type.slice(1) + ' issues';
+  list.innerHTML = '';
+
+  for (var i = 0; i < issues[type].length; i++) {
+    var li = document.createElement('li');
+    li.textContent = issues[type][i];
+    list.appendChild(li);
+  }
+
+  document.getElementById('issues-container').classList.remove('hidden');
 }
 
-function submitForm() {
-    const data = {
-        name: name.value,
-        email: email.value,
-        phone: phone.value,
-        device: device.value,
-        issue: issue.value,
-        date: date.value,
-        time: time.value
-    };
-
-    fetch('https://formspree.io/f/mreekeyp', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
-    }).then(r => {
-        if (r.ok) alert('Request sent. We’ll be in touch.');
-        else alert('Submission failed. Try again.');
-    });
-}
+window.onload = function () {
+  showSection('home');
+};
 </script>
 
 </body>
